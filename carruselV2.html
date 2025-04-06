@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"   
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/carruselV2.css">
+    <title>CarruselV2</title>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button-82-pushable" onclick="openDialog()">
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge"></span>
+            <span class="button-82-front">
+                Crear carta+
+                <h2><span class="cantidadCartas">0</span>/5</h2>
+            </span>
+        </button>
+    </div>
+        <br>
+    
+    <dialog id="infoDialog">
+      <h3 id="infoDialogText">Usted ha alcanzado el limite de tarjetas creadas, considere eliminar para continuar creando cartas.</h3>
+        <div style="display: flex; align-items: center; justify-content: center;">
+        <img src="/imgCarrusel/block.svg" width="34" height="34" viewBox="0 0 34 34">
+        </div>
+        <br>
+        <div class="btn-group-item d-flex justify-content-between align-items-center">
+          <button class="infoButtonExit" onclick="closeInfoDialog()">
+            <svg width="15" height="24" viewBox="0 0 24 24">
+              <img src="/imgCarrusel/exitInfo.svg" width="24" height="24" viewBox="0 0 24 24">
+            </svg>
+            Salir</button>
+    </dialog>
+
+    <dialog id="formDialog">
+        <form id="formulario">
+        <p id="formFirstText">Complete los campos para crear su carta nueva.</p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+        <img src="/imgCarrusel/form.svg" width="34" height="34" viewBox="0 0 34 34">
+        </div>
+        <br>
+          <input
+        class="form-control mb-2" 
+        type="text"
+        name="userName"
+        placeholder="Ingrese nombre"
+        autocomplete="off"
+        id="formName"
+        maxlength="12">
+
+        <p class="text-danger mb-2 d-none" id="alertName"></p>
+
+        <input
+        class="form-control mb-2" 
+        type="text"
+        name="userLastName"
+        placeholder="Ingrese apellido"
+        autocomplete="off"
+        id="formLastName"
+        maxlength="12">
+
+        <p class="text-danger mb-2 d-none" id="alertLastName"></p>
+
+        <input
+        class="form-control mb-2" 
+        type="text"
+        name="userAge"
+        placeholder="Ingrese su edad"
+        autocomplete="off"
+        id="formAge"
+        minlength="2"
+        maxlength="3">
+
+        <p class="text-danger mb-2 d-none" id="alertAge"></p>
+        <input
+        class="form-control mb-2" 
+        type="text"
+        name="userOccupation"
+        placeholder="Ingrese su ocupación"
+        autocomplete="off"
+        id="formOccupation"
+        minlength="2"
+        maxlength="13">
+
+        <p class="text-danger mb-2 d-none" id="alertOccupation"></p>
+        <textarea
+        class="form-control mb-2" 
+        type="text"
+        name="userDescription"
+        placeholder="Ingrese una breve descripción"
+        autocomplete="off"
+        id="formDescription"
+        minlength="3"
+        maxlength="85"
+        rows="3"></textarea>
+
+        <p class="text-danger mb-2 d-none" id="alertDescription"></p>
+        <input
+        class="form-control mb-2"
+        type="email"
+        name="userEmail"
+        placeholder="Ingrese su correo"
+        autocomplete="off"
+        id="formEmail"
+        minlength="5"
+        maxlength="30">
+
+        <p class="text-danger mb-2 d-none" id="alertEmail"></p>
+    </form>
+
+      <div class="btn-group-item d-flex justify-content-between align-items-center">
+      <button class="formButtonExit" onclick="closeDialog()">
+        <svg width="15" height="24" viewBox="0 0 24 24">
+          <img src="/imgCarrusel/exit.svg" width="24" height="24" viewBox="0 0 24 24">
+        </svg>
+        Salir</button>
+
+      <button id="newCard" class="formButtonSuccess">
+        <svg width="15" height="24" viewBox="0 0 24 24">
+          <img src="/imgCarrusel/addCard.svg" width="24" height="24" viewBox="0 0 24 24">
+        </svg>
+        Crear</button>
+      </div>
+    </dialog>
+
+    <dialog id="formEditDialog">
+      <form id="formularioEditar">
+      <p id="formFirstText">Edite la información que desee cambiar en su carta.</p>
+      <div style="display: flex; align-items: center; justify-content: center;">
+      <img src="/imgCarrusel/editUser.svg" width="34" height="34" viewBox="0 0 34 34">
+      </div>
+      <br>
+        <input
+      class="form-control mb-2 is-valid" 
+      type="text"
+      name="userName"
+      placeholder="Ingrese nombre"
+      autocomplete="off"
+      id="editName"
+      maxlength="12">
+
+      <input
+      class="form-control mb-2 is-valid" 
+      type="text"
+      name="userLastName"
+      placeholder="Ingrese apellido"
+      autocomplete="off"
+      id="editLastName"
+      maxlength="12">
+
+      <input
+      class="form-control mb-2 is-valid" 
+      type="text"
+      name="userAge"
+      placeholder="Ingrese su edad"
+      autocomplete="off"
+      id="editAge"
+      minlength="2"
+      maxlength="3">
+
+      <input
+      class="form-control mb-2 is-valid" 
+      type="text"
+      name="userOccupation"
+      placeholder="Ingrese su ocupación"
+      autocomplete="off"
+      id="editOccupation"
+      minlength="2"
+      maxlength="13">
+
+      <textarea
+      class="form-control mb-2 is-valid" 
+      type="text"
+      name="userDescription"
+      placeholder="Ingrese una breve descripción"
+      autocomplete="off"
+      id="editDescription"
+      minlength="3"
+      maxlength="85"
+      rows="3"
+      ></textarea>
+
+      <input
+      class="form-control mb-2 is-valid"
+      type="email"
+      name="userEmail"
+      placeholder="Ingrese su correo"
+      autocomplete="off"
+      id="editEmail"
+      minlength="5"
+      maxlength="30">
+  </form>
+    <div class="btn-group-item d-flex justify-content-between align-items-center">
+    <button class="formButtonExit" onclick="closeEditDialog()">
+      <svg width="15" height="24" viewBox="0 0 24 24">
+        <img src="/imgCarrusel/exit.svg" width="24" height="24" viewBox="0 0 24 24">
+      </svg>
+      Salir</button>
+
+    <button id="editCard" class="formButtonSuccess">
+      <svg width="15" height="24" viewBox="0 0 24 24">
+        <img src="/imgCarrusel/save.svg" width="24" height="24" viewBox="0 0 24 24">
+      </svg>
+      Guardar</button>
+    </div>
+  </dialog>
+
+  <dialog id="confirmDialog">
+    <h2"><b>Usted está a punto de eliminar su tarjeta.</b></h2>
+    <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="/imgCarrusel/caution.svg" width="34" height="34" viewBox="0 0 34 34">
+    </div>
+    <br>
+    <div class="btn-group-item d-flex justify-content-between align-items-center">
+      <button class="confirmExit" onclick="closeDeleteDialog()">
+        <svg width="15" height="24" viewBox="0 0 24 24">
+          <img src="/imgCarrusel/exitInfo.svg" width="24" height="24" viewBox="0 0 24 24">
+        </svg>
+        Salir</button>
+        <button class="deleteCard">
+          <svg width="15" height="24" viewBox="0 0 24 24">
+            <img src="/imgCarrusel/deleteCard.svg" width="24" height="24" viewBox="0 0 24 24">
+          </svg>
+          Eliminar</button>
+  </dialog>
+    
+<template id="template">
+  <figure class="gallery-item">
+    <div class="estilosTailwind relative flex flex-col my-6 shadow-sm border border-slate-200 rounded-lg w-96">      
+        <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+          <span class="text-sm font-medium text-slate-600">
+            <div style="display: flex; align-items: center; justify-content: left;">
+            <p><span class="nombreUser"></span><br><span class="apellidoUser"></span></p>
+            <input type="color" value="#ffffff" class="color-input d-none">
+            <img class="color-wheel" src="/imgCarrusel/color-wheel.svg">
+            </div>
+          <input type="color" value="#ffffff" class="color-input-blanco d-none">
+            <div class="edadFont">
+            <b>Edad: </b><span class="edadUser"></span>
+            </div>
+            <div class="ocupacionUserStyle">
+            <b>Ocupación: </b><span class="ocupacionUser"></span>
+            </div>
+          </span>
+        </div>
+        <div class="p-4">
+          <p class="text-slate-600 leading-normal font-light">
+            <span class="descripcionUser">
+            </span>
+            <p style="display: flex; align-items: center; margin-top: 10px; justify-content: center;"><span class="emailUser">carlosbarrancapl456@gmail.commmm</span></p>
+          </p>
+        </div>
+        <div class="mx-4 border-t border-slate-200 px-5">
+          <div class="btn-group-item d-flex justify-content-center align-items-center">
+              <button class="deleteButton" onclick="eliminar(this)" style="display: flex; align-items: center; gap: 5px; border-right: 1px solid #ccc; padding-right: 10px;">
+                  <img src="/imgCarrusel/trash.svg" class="deleteSvg" alt="Eliminar" style="width: 16px; height: 16px;">
+                  Eliminar
+              </button>
+              <button class="editButton" onclick="openEditDialog(this.closest('.gallery-item'))" style="display: flex; align-items: center; gap: 9px; padding-left: 10px;">
+                  <img src="/imgCarrusel/edit.svg" alt="Editar" style="width: 16px; height: 16px;">
+                  Editar
+              </button>
+          </div>
+        </div>
+      </div>
+</figure>
+</template>
+
+<section id="gallery">
+    <div class="gallery-container">
+    </div>
+</section>
+<nav class="gallery-navigation">
+    <button class="nav-button prev-button"><span>&#60;</span></button>
+    <button class="nav-button next-button"><span>&#62;</span></button>
+</nav>
+<script src="/carruselV2.js"></script>
+</body>
+</html>
