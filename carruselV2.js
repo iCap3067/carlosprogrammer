@@ -416,3 +416,5 @@ function closeDeleteDialog() {
     confirmDialog.close();
     elementoDeleteTarget = null;
 };
+
+// Darling hold my hand //
