@@ -1,19 +1,15 @@
 body {
-    margin: px;
+    margin: 10px;
     position: relative;
     display:grid ;
     align-items: center;
     justify-content: center;
-    background-color: #212121;
+    background-color: #92817A;
     height: 100vh;
   }
 /* Estilo básico para la galería */
-figure {
-    margin:0;
-  }
   #gallery {
-      max-width: 210px;
-      margin:   auto;
+      max-width: 220px;
       overflow: hidden;
       position: relative;  
   }
@@ -22,8 +18,8 @@ figure {
       transition: transform 0.5s ease-in-out;
   }
   .gallery-item {
-      min-width: 100%;
-      box-sizing: border-box;
+    min-width: 100%;
+    border-radius: 15px;
   }
   .gallery-item img {
       width: 100%;
@@ -57,7 +53,7 @@ figure {
     opacity: 0.85;
   }
   #formDialog {
-    background-color: rgb(255, 248, 248);
+    background-color: #FFFBFF;
     border: 0px #212121;
     padding: 30px;
     border-style: groove;
@@ -67,9 +63,9 @@ figure {
     border-bottom-left-radius: 25px;
   }
 
-  #formFirstText {
+  .formFirstText {
     text-align: center;
-    font-family:'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 15px;
     color: linear-gradient(indigo, hotpink);
@@ -120,7 +116,7 @@ figure {
   }
 
   #infoDialog {
-    background-color: rgb(255, 248, 248);
+    background-color: #FFFBFF;
     border: 0px #212121;
     border-style: groove;
     border-top-right-radius: 65px;
@@ -132,10 +128,11 @@ figure {
   }
 
   #confirmDialog {
-    background-color: rgb(255, 248, 248);
+    background-color: #FFFBFF;
     border: 0px #212121;
     padding: 30px;
     border-style: groove;
+    min-width: 30vw;
     border-top-left-radius: 65px;
     border-bottom-right-radius: 65px;
     border-top-right-radius: 25px;
@@ -143,7 +140,7 @@ figure {
   }
 
   .deleteCard {
-    background:#fff127;
+    background:#047c36;
     color:#fff;
     border:none;
     position:relative;
@@ -159,12 +156,12 @@ figure {
   }
 
   .deleteCard:hover{
-    background:rgb(255, 248, 248);
-    color: #b1a719;
+    background:#FFFBFF;
+    color: #047c36;
   }
 
   .deleteCard:hover img {
-    filter: sepia(100%) hue-rotate(-15deg) brightness(60%) saturate(500%);
+    filter: brightness(0) saturate(100%) invert(18%) sepia(70%) saturate(2000%) hue-rotate(120deg) brightness(150%) contrast(100%);
   }
 
   .deleteCard:before,.deleteCard:after{
@@ -174,7 +171,7 @@ figure {
     right:0;
     height:2px;
     width:0;
-    background: #b1a719;
+    background: #047c36;
     transition:400ms ease all;
   }
   .deleteCard:after{
@@ -205,7 +202,7 @@ figure {
   }
 
   .confirmExit:hover{
-    background:rgb(255, 248, 248);
+    background:#FFFBFF;
     color:#d10404;
   }
 
@@ -235,7 +232,7 @@ figure {
   }
 
   #formEditDialog {
-    background-color: rgb(255, 248, 248);
+    background-color: #FFFBFF;
     border: 0px #212121;
     padding: 30px;
     border-style: groove;
@@ -263,7 +260,7 @@ figure {
 }
 
 .infoButtonExit:hover {
-    background: rgb(255, 248, 248);
+    background: #FFFBFF;
     color: #0655ff;
 }
 
@@ -301,17 +298,19 @@ figure {
         color:#fff;
         border:none;
         position:relative;
-        height:45px;
-        font-size:1.1em;
+        display: inline-block;
+        margin: 0px;
+        height: 40px;
+        font-size:1em;
         padding:0 2em;
         cursor:pointer;
         transition:800ms ease all;
         outline:none;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
+        border-radius: 25px;
+        margin-top: 5%;
       }
       .formButtonSuccess:hover{
-        background:rgb(255, 248, 248);
+        background:#FFFBFF;
         color:#047c36;
       }
 
@@ -343,19 +342,20 @@ figure {
   .formButtonExit {
     background:#d10404;
     color:#fff;
+    display: inline-block;
     border:none;
     position:relative;
-    height:45px;
+    height: 40px;
     font-size:1.1em;
     padding:0 2em;
     cursor:pointer;
     transition:800ms ease all;
     outline:none;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-radius: 25px;
+    margin-top: 5%;
   }
   .formButtonExit:hover{
-    background:rgb(255, 248, 248);
+    background:#FFFBFF;
     color:#d10404;
   }
 
@@ -389,7 +389,7 @@ figure {
     color:#fff;
     border:none;
     position:relative;
-    width: 140px;
+    width: 100px;
     height:25px;
     font-size:15px;
     padding:0 1em;
@@ -401,7 +401,7 @@ figure {
   }
 
   .deleteButton:hover{
-    background:rgb(255, 248, 248);
+    background:#FFFBFF;
     color:#d10404;
   }
 
@@ -431,11 +431,11 @@ figure {
   }
 
   .editButton {
-    background:#1f68d6;
+    background:#0777FF;
     color:#fff;
     border:none;
     position:relative;
-    width: 140px;
+    width: 100px;
     height:25px;
     font-size:15px;
     padding:0 1em;
@@ -447,8 +447,8 @@ figure {
   }
 
   .editButton:hover{
-    background:rgb(255, 248, 248);
-    color:#4582df;
+    background:#FFFBFF;
+    color:#0777FF;
   }
 
   .editButton:hover img {
@@ -462,7 +462,7 @@ figure {
     right:0;
     height:2px;
     width:0;
-    background: #4582df;
+    background: #0777FF;
     transition:400ms ease all;
   }
   .editButton:after{
@@ -478,41 +478,57 @@ figure {
 
   .edadFont {
     font-size: 16px;
-    font-family: sans-serif ;
-    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
   }
 
   .ocupacionUserStyle {
-    font-size: 12px;
-    font-family: sans-serif;
-    text-decoration: underline;
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
   }
-.descripcionUser {
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 10px;
-}
+  .ocupacionUser {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0px;
+  }
+
+  .descripcionTemplate {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 0px;
+    display: block;
+  }
+
+  .descripcionUser {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  }
   .apellidoUser {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    text-decoration: overline;
     }
 
   .nombreUser {
-  font-family: 'Courier New', Courier, monospace;
+    font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  text-decoration: overline;
   }
 
-  .emailText {
-    font-size: 16px;
-    font-family: sans-serif ;
-    text-decoration: underline;
+  .emailTemplate {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 0;
   }
-
+  
   .emailUser {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
-    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
     text-decoration: underline;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0;
     }
 
     .color-wheel {
@@ -540,10 +556,13 @@ figure {
   }
 
   .gallery-item{
-    background-color: #ffffff;
+    background-color: #FFFBFF;
     position: relative;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
-  
 /* BOTON PRINCIPAL */
 .button-82-pushable {
   position: relative;
@@ -583,9 +602,9 @@ figure {
   background: linear-gradient(
     to left,
     hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
+    #a30036 8%,
     hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
+    hsl(340, 70%, 31%) 100%
   );
 }
 
@@ -596,7 +615,7 @@ figure {
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
-  background: #E60047;
+  background: #af1549 4%;
   will-change: transform;
   transform: translateY(-4px);
   transition:

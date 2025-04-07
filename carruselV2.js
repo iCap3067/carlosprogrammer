@@ -124,7 +124,7 @@ newCard.addEventListener("click", (e) => {
         formEmail.classList.add("is-valid");
         alertEmail.classList.add("d-none");
     }
-    if (errores.length > 2) {
+    if (errores.length > 1) {
         document.querySelector("#formDialog").style.borderTopRightRadius = "0px";
         document.querySelector("#formDialog").style.borderBottomRightRadius = "0px";
     } else {
@@ -190,6 +190,10 @@ const pintarCartas = () => {
         colorInput.closest(".gallery-item").style.textDecorationColor = "#ffffff";
         const selectedColor = event.target.value;
         colorInput.closest(".gallery-item").style.backgroundColor = selectedColor;
+        /* if(selectedColor === "#FFFFFF") {
+            colorInput.closest(".gallery-item").style.color = "#000000";
+            colorInput.closest(".gallery-item").style.textDecorationColor = "#000000";
+        }; */
     });
     fragment.appendChild(clone);
     galleryContainer.appendChild(fragment);

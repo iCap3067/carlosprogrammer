@@ -40,7 +40,7 @@
 
     <dialog id="formDialog">
         <form id="formulario">
-        <p id="formFirstText">Complete los campos para crear su carta nueva.</p>
+        <p class="formFirstText">Complete los campos para crear su carta nueva.</p>
         <div style="display: flex; align-items: center; justify-content: center;">
         <img src="/imgCarrusel/form.svg" width="34" height="34" viewBox="0 0 34 34">
         </div>
@@ -86,7 +86,7 @@
         autocomplete="off"
         id="formOccupation"
         minlength="2"
-        maxlength="13">
+        maxlength="18">
 
         <p class="text-danger mb-2 d-none" id="alertOccupation"></p>
         <textarea
@@ -131,7 +131,7 @@
 
     <dialog id="formEditDialog">
       <form id="formularioEditar">
-      <p id="formFirstText">Edite la información que desee cambiar en su carta.</p>
+      <p class="formFirstText">Edite la información que desee cambiar en su carta.</p>
       <div style="display: flex; align-items: center; justify-content: center;">
       <img src="/imgCarrusel/editUser.svg" width="34" height="34" viewBox="0 0 34 34">
       </div>
@@ -172,7 +172,7 @@
       autocomplete="off"
       id="editOccupation"
       minlength="2"
-      maxlength="13">
+      maxlength="18">
 
       <textarea
       class="form-control mb-2 is-valid" 
@@ -212,7 +212,7 @@
   </dialog>
 
   <dialog id="confirmDialog">
-    <h2"><b>Usted está a punto de eliminar su tarjeta.</b></h2>
+    <p class="formFirstText">¿Desea usted eliminar su tarjeta?<p>
     <div style="display: flex; align-items: center; justify-content: center;">
     <img src="/imgCarrusel/caution.svg" width="34" height="34" viewBox="0 0 34 34">
     </div>
@@ -222,12 +222,12 @@
         <svg width="15" height="24" viewBox="0 0 24 24">
           <img src="/imgCarrusel/exitInfo.svg" width="24" height="24" viewBox="0 0 24 24">
         </svg>
-        Salir</button>
+        No</button>
         <button class="deleteCard">
           <svg width="15" height="24" viewBox="0 0 24 24">
             <img src="/imgCarrusel/deleteCard.svg" width="24" height="24" viewBox="0 0 24 24">
           </svg>
-          Eliminar</button>
+          Si</button>
   </dialog>
     
 <template id="template">
@@ -244,16 +244,23 @@
             <div class="edadFont">
             <b>Edad: </b><span class="edadUser"></span>
             </div>
-            <div class="ocupacionUserStyle">
-            <b>Ocupación: </b><span class="ocupacionUser"></span>
+            <div>
+            <p>
+            <span class="ocupacionUserStyle">Ocupación:</span>
+            <span class="ocupacionUser"></span>
+            </p>
             </div>
           </span>
         </div>
         <div class="p-4">
-          <p class="text-slate-600 leading-normal font-light">
+            <p>
+            <span class="descripcionTemplate">Descripcion:</span>
             <span class="descripcionUser">
             </span>
-            <p style="display: flex; align-items: center; margin-top: 10px; justify-content: center;"><span class="emailUser">carlosbarrancapl456@gmail.commmm</span></p>
+            <p>
+              <span class="emailTemplate">Correo:</span>
+              <span class="emailUser">carlosbarrancapl456@gmail.commmm</span>
+            </p>
           </p>
         </div>
         <div class="mx-4 border-t border-slate-200 px-5">
