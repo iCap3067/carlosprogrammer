@@ -388,8 +388,9 @@ body {
     background:#d10404;
     color:#fff;
     border:none;
+    margin-left: 5px;
     position:relative;
-    width: 100px;
+    width: 90px;
     height:25px;
     font-size:15px;
     padding:0 1em;
@@ -398,6 +399,7 @@ body {
     outline:none;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    margin-bottom: 5px;
   }
 
   .deleteButton:hover{
@@ -433,9 +435,11 @@ body {
   .editButton {
     background:#0777FF;
     color:#fff;
+    margin-right: 5px;
+    margin-bottom: 5px;
     border:none;
     position:relative;
-    width: 100px;
+    width: 90px;
     height:25px;
     font-size:15px;
     padding:0 1em;
@@ -558,10 +562,7 @@ body {
   .gallery-item{
     background-color: #FFFBFF;
     position: relative;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding: 1.2rem;
   }
 /* BOTON PRINCIPAL */
 .button-82-pushable {
