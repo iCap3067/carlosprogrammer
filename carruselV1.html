@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"   
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="carruselV1.css">
+    <title>CarruselV1</title>
+</head>
+<body>
+
+    <div class="content">
+        <div class="content">
+          <button class="btn" onclick="openDialog()" id="botonPrincipal">( + )
+          </button>
+        </div>
+        <br>
+    
+
+    <dialog id="formDialog">
+      ¡Hola! Por favor ingrese los valores adecuados para la creacion de su carta.
+      <form id="formulario">
+        <input
+        class="form-control mb-2" 
+        type="text"
+        name="userName"
+        placeholder="Ingrese nombre"
+        autocomplete="off"
+        id="formName"
+        minlength="3"
+        maxlength="20">
+
+        <p class="text-danger mb-2 d-none" id="alertName"></p>
+        <input
+        class="form-control mb-2" 
+        type="text"
+        name="userAge"
+        placeholder="Ingrese su edad"
+        autocomplete="off"
+        id="formAge"
+        minlength="2"
+        maxlength="3">
+
+        <p class="text-danger mb-2 d-none" id="alertAge"></p>
+        <input
+        class="form-control mb-2" 
+        type="text"
+        name="userOccupation"
+        placeholder="Ingrese su ocupacion"
+        autocomplete="off"
+        id="formOccupation"
+        minlength="3"
+        maxlength="20">
+
+        <p class="text-danger mb-2 d-none" id="alertOccupation"></p>
+        <input
+        class="form-control mb-2" 
+        type="text"
+        name="userDescription"
+        placeholder="Ingrese una breve descripcion suya"
+        autocomplete="off"
+        id="formDescription"
+        minlength="3"
+        maxlength="100">
+
+        <p class="text-danger mb-2 d-none" id="alertDescription"></p>
+        <input
+        class="form-control mb-2"
+        type="email"
+        name="userEmail"
+        placeholder="Ingrese su correo"
+        autocomplete="off"
+        id="formEmail"
+        minlength="3"
+        maxlength="50">
+
+        <p class="text-danger mb-2 d-none" id="alertEmail"></p>
+    </form>
+    <div
+    class="alert alert-success mt-2 d-none"
+    id="alertSuccess"
+    ></div>
+
+      <div class="btn-group-item d-flex justify-content-between align-items-center">
+      <button class="btn btn-outline-secondary" onclick="closeDialog()">Salir</button>
+      <button id="newCard" class="btn btn-outline-secondary">Crear</button>
+      </div>
+    </dialog>
+
+    <template id="template">
+      <div class="carouselComun ratio ratio-8x9">
+        <article class="col-sm-12 mb-3">
+        <div class="carousel-item active">
+            <div class="card">
+                <div class="card">
+                    <h5 class="card-title"><span class="nombreUser">Carlos Barrancas</span></h5>
+                    <p class="lead">Edad: <span class="edadUser">18</span></p>
+                    <p class="lead"><span class="ocupacionUser">Estudiante</span></p>
+                    <p class="text"><span class="descripcionUser">Soy un estudiante y trabajador de
+                    Alcaravan.</span></p>
+                    <p class="lead">Correo: <span class="emailUser">aqui va el gmail</span></p>
+                    <button class="btn btn-outline-primary" onclick="edit(this)">
+                    Editar</button>
+                    <button class="btn btn-outline-danger" onclick="eliminarUltimoBoton(almacenBotones)">
+                    Eliminar</button>
+                </div>
+            </div>
+        </article>
+        </div>
+    </template>
+
+    <template id="botonTemplate">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    </template>
+
+
+    <template id="templateHija">
+      <div class="carouselComun ratio ratio-8x9">
+        <article class="col-sm-12 mb-3">
+        <div class="carousel-item">
+            <div class="card">
+                <div class="card">
+                  <h5 class="card-title"><span class="nombreUser">Carlos Barrancas</span></h5>
+                  <p class="lead">Edad: <span class="edadUser">18</span></p>
+                  <p class="lead"><span class="ocupacionUser">Estudiante</span></p>
+                  <p class="text"><span class="descripcionUser">Soy un estudiante y trabajador de
+                    Alcaravan, me esfuerzo mucho para que esta pagina funcione.
+                  </span></p>
+                  <p class="lead">Correo: <span class="emailUser">aqui va el gmail</span></p>
+                    <button class="btn btn-outline-primary" onclick="edit(this)">
+                    Editar</button>
+                    <button class="btn btn-outline-danger" onclick="eliminar(this)" >
+                    Eliminar</button>
+                </div>
+            </div>
+        </article>
+      </div>
+    </template>
+
+     <template id="botonTemplateHija">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </template>
+    
+    
+    
+    
+    <div id="carrusel" class="d-none">
+      
+      <h4 id="contadorBorde"><span class="currentCards">1</span>/10</h4>
+      
+
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+
+        <div id="almacenBotones" class="carousel-indicators">
+        </div>
+
+        <div id="almacenCards">
+        </div>
+
+    </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
+  </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+    crossorigin="anonymous"></script>
+    <script src="/carruselV1.js"></script>
+</body>
+</html>
